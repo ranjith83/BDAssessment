@@ -1,0 +1,24 @@
+<h1>BD Assessment</h1>
+
+<p>first number:<input type="number" [(ngModel)]='batch'></p>
+<p>second number:<input type="number" [(ngModel)]='processNumbers'></p>
+
+<button (click)="StartProcess()">Start Process</button>
+
+<table class='table' *ngIf="generateResult">
+  <thead>
+    <tr>
+      <th>Numbers to Multiply</th>
+      <th>Multipled Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gen of generateResult">
+      <td style="font-weight:bold"> Remaining Batch : {{ remainingBatch }}</td>
+    </tr>
+    <tr *ngFor="let result of multiplied">
+      <td>{{ result.toMultiply }}</td>
+      <td>{{ result.multipliedResult }}</td>
+    </tr>
+  </tbody>
+</table>
